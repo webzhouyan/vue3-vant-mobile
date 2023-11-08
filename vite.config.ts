@@ -2,6 +2,7 @@
 import path from 'node:path'
 import { loadEnv } from 'vite'
 import type { ConfigEnv, UserConfig } from 'vite'
+import UnoCSS from 'unocss/vite'
 
 import { visualizer } from 'rollup-plugin-visualizer'
 import Components from 'unplugin-vue-components/vite'
@@ -34,6 +35,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       vue(),
       vueJsx(),
       visualizer(),
+      UnoCSS(),
 
       legacy({
         targets: ['defaults', 'not IE 11'],

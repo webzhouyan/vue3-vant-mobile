@@ -6,6 +6,7 @@ import App from './App.vue'
 import router from './router'
 
 import './app.less'
+import 'virtual:uno.css'
 
 // Vant 桌面端适配
 import '@vant/touch-emulator'

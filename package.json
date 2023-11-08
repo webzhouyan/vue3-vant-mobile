@@ -64,6 +64,7 @@
     "slash2": "^2.0.0",
     "terser": "^5.22.0",
     "typescript": "^5.2.2",
+    "unocss": "^0.57.2",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.5.0",

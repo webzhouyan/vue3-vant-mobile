@@ -1,26 +1,6 @@
-<script setup lang="ts">
-import { useStore } from '@/stores'
-import { localStorage } from '@/utils/local-storage'
-
-const store = useStore()
-const themeStore = localStorage.get('theme')
-const checked = ref<boolean>(themeStore === 'dark')
-
-watch(checked, (val) => {
-  if (val) {
-    store.mode = 'dark'
-    localStorage.set('theme', 'dark')
-  }
-  else {
-    store.mode = 'light'
-    localStorage.set('theme', 'light')
-  }
-})
-</script>
-
 <template>
   <div class="container">
-    <div class="logo" />
+    <div class="logo"></div>
     <VanCellGroup title="一个集成最新技术栈、完整干净的移动端模板" inset>
       <VanCell center title="🌗 暗黑模式">
         <template #right-icon>
@@ -43,6 +23,26 @@ watch(checked, (val) => {
     </VanCellGroup>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useStore } from '@/stores'
+import { localStorage } from '@/utils/local-storage'
+
+const store = useStore()
+const themeStore = localStorage.get('theme')
+const checked = ref<boolean>(themeStore === 'dark')
+
+watch(checked, (val) => {
+  if (val) {
+    store.mode = 'dark'
+    localStorage.set('theme', 'dark')
+  }
+  else {
+    store.mode = 'light'
+    localStorage.set('theme', 'light')
+  }
+})
+</script>
 
 <style lang="less" scoped>
 .container {
